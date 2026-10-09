@@ -40,7 +40,7 @@ svg.i{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .ng a:hover{background:rgba(255,255,255,.06);color:#fff;text-decoration:none}
 .ng a[aria-current="page"]{background:rgba(255,255,255,.12);color:#fff;font-weight:700}
 .ng a span.l{flex:1}
-.ng .n{font-size:11px;font-weight:800;padding:0 6px;border-radius:999px;background:#E0705F;color:#fff;min-width:18px;text-align:center;line-height:18px}
+.ng .n{font-size:11px;font-weight:800;padding:0 6px;border-radius:999px;background:var(--warn-s);color:var(--warn);min-width:18px;text-align:center;line-height:18px}
 .side-foot{margin-top:auto;padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);font-size:11.5px;color:#7FA294}
 .side-foot b{color:#fff}
 .linkbtn{background:none;border:0;padding:0;color:#BFE0D0;font-weight:700;cursor:pointer;font-size:12px}
@@ -60,9 +60,9 @@ svg.i{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .qres .k{color:var(--faint);font-size:11.5px;margin-left:auto}
 .top .sp{flex:1}
 .ib{position:relative;width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--ink2)}
-.ib .dotn{position:absolute;top:-5px;right:-5px;font-size:10.5px;font-weight:800;background:var(--bad);color:#fff;border-radius:999px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px;border:2px solid #fff}
+.ib .dotn{position:absolute;top:-5px;right:-5px;font-size:10.5px;font-weight:800;background:var(--warn);color:#fff;border-radius:999px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px;border:2px solid #fff}
 .me{display:flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px}
-.proto{font-size:11.5px;font-weight:700;color:var(--blush);background:var(--blush-s);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.proto{font-size:11.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);padding:3px 9px;border-radius:999px;white-space:nowrap}
 .menuwrap{position:relative}
 .dd{position:absolute;right:0;top:42px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px rgba(23,32,27,.14);padding:6px;min-width:230px;display:none;z-index:40}
 .dd.show{display:block}
@@ -404,6 +404,59 @@ button.kpi{cursor:pointer} button.kpi:hover{background:var(--sunk)}
 @media (max-width:560px){.g4{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{.side,.top,.acts,.bulk{display:none!important}.app{display:block}}
+
+/* Demo clarity and role preview */
+.kpi-wrap{margin-bottom:14px}
+.kpi-wrap .kpis{margin-bottom:0}
+.sample-note{display:flex;align-items:center;gap:7px;padding:0 2px 6px;font-size:10.5px;color:var(--muted)}
+.sample-note b{color:var(--brand);font-size:10px;text-transform:uppercase;letter-spacing:.055em}
+.sample-note span{color:var(--faint)}
+.home-demo-note{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;margin:-3px 0 14px;border:1px solid #DCE9E2;border-radius:10px;background:#F5F9F6;color:var(--muted);font-size:12px;line-height:1.5}
+.home-demo-note b{white-space:nowrap;color:var(--brand)}
+.tour-open{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#fff;color:var(--ink2);font:600 12px var(--font);cursor:pointer}
+.tour-open:hover{background:var(--sunk)}
+.rolebtn{border:0;background:transparent;cursor:pointer;text-align:left;padding:4px 2px}
+.rolebtn .roletext{display:flex;flex-direction:column;gap:2px;line-height:1.15}
+.roletext b{font-size:12px;color:var(--ink)}
+.roletext small{font-size:10.5px;color:var(--muted);font-weight:500}
+.role-chevron{color:var(--muted);font-size:16px;padding:0 2px}
+.role-dd{min-width:260px}
+.role-dd-head{padding:7px 10px 9px;color:var(--muted);font-size:11px;font-weight:700}
+.role-dd button{align-items:flex-start;gap:2px;padding:9px 10px}
+.role-dd button b{font-size:12px;color:var(--ink)}
+.role-dd button small{font-size:10.5px;color:var(--muted)}
+.role-dd-note{margin:6px 4px 2px;padding:9px;border-top:1px solid var(--line2);color:var(--muted);font-size:10.5px;line-height:1.45}
+.demo-entry{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(24,37,31,.54)}
+.demo-entry[hidden],.guided-tour[hidden]{display:none!important}
+.entry-card{width:min(560px,100%);background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 28px 80px rgba(10,25,18,.28)}
+.entry-kicker{display:inline-flex;padding:5px 9px;border-radius:999px;background:var(--brand-soft);color:var(--brand);font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.entry-card h2{margin:14px 0 8px;font-size:25px;line-height:1.2;letter-spacing:-.02em}
+.entry-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.entry-card ul{margin:15px 0 20px;padding-left:19px;color:var(--ink2);font-size:12.5px;line-height:1.75}
+.entry-actions{display:flex;flex-wrap:wrap;gap:8px}
+.entry-actions .btn{min-height:38px}
+.guided-tour{position:fixed;z-index:95;left:50%;bottom:16px;transform:translateX(-50%);width:min(760px,calc(100% - 28px));padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 55px rgba(10,25,18,.2)}
+.tour-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.tour-step{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand)}
+.tour-progress{display:flex;gap:4px}
+.tour-progress i{display:block;width:22px;height:4px;border-radius:4px;background:var(--line)}
+.tour-progress i.on{background:var(--brand)}
+.guided-tour h3{margin:0 0 4px;font-size:15px}
+.guided-tour p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.tour-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:11px}
+.tour-actions .right{display:flex;gap:7px}
+.ai-plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ai-provider{padding:13px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ai-provider b{display:block;font-size:12.5px;margin-bottom:4px}
+.ai-provider p{margin:0;color:var(--muted);font-size:11.5px;line-height:1.45}
+.ai-provider .pill{margin-top:8px}
+.ai-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.ai-flow-step{padding:11px;border:1px solid var(--line2);border-radius:9px;background:var(--sunk)}
+.ai-flow-step b{display:block;font-size:11.5px;margin-bottom:4px}
+.ai-flow-step span{font-size:10.5px;color:var(--muted);line-height:1.4}
+.ai-safety{padding:13px 14px;border:1px solid #DCE9E2;background:#F5F9F6;border-radius:10px;color:var(--ink2);font-size:12px;line-height:1.55}
+@media(max-width:900px){.top .roletext,.top .role-chevron{display:none}.top #roleAvatar,.top #roleAvatar *{display:grid!important}.tour-open span:nth-child(2){display:none}.ai-flow{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.entry-card{padding:22px}.entry-card h2{font-size:22px}.home-demo-note{font-size:11px;flex-direction:column;gap:3px}.ai-plan-grid,.ai-flow{grid-template-columns:1fr}.guided-tour{bottom:8px;padding:12px}.tour-actions .btn{padding:7px 9px}}
 </style>
 </head>
 <body>
@@ -418,10 +471,22 @@ button.kpi{cursor:pointer} button.kpi:hover{background:var(--sunk)}
       <button class="ib menu" data-act="menu" aria-label="Open menu"></button>
       <div class="gsearch"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-3.5-3.5"/></svg><label class="sr" for="q">Search</label><input id="q" type="search" placeholder="Search records, people, SOPs, files" autocomplete="off"><kbd>/</kbd><div class="qres" id="qres"></div></div>
       <div class="sp"></div>
-      <span class="proto">Prototype</span>
+      <button class="tour-open" data-act="openIntro" type="button"><span aria-hidden="true">✦</span><span>Tour</span></button>
+      <span class="proto">Demo · sample data</span>
       <div class="menuwrap"><button class="btn pri" data-act="createMenu" id="createBtn"></button><div class="dd" id="createDD"></div></div>
       <a class="ib" href="#decisions" id="inbox" aria-label="Decisions waiting"></a>
-      <div class="me" id="me"></div>
+      <div class="menuwrap" id="roleMenu">
+        <button class="me rolebtn" data-act="toggleRole" id="roleBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change role preview">
+          <span id="roleAvatar"></span><span class="roletext"><b id="roleLabel">Systems Lead</b><small>Role preview</small></span><span class="role-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="dd role-dd" id="roleDD">
+          <div class="role-dd-head">Preview a team perspective</div>
+          <button data-act="chooseRole" data-role="Systems Lead"><b>Systems Lead</b><small>All operating areas</small></button>
+          <button data-act="chooseRole" data-role="Founder"><b>Founder</b><small>Founder-owned decisions</small></button>
+          <button data-act="chooseRole" data-role="Manager"><b>Manager</b><small>Hannah Cole sample view</small></button>
+          <div class="role-dd-note">Illustrative only. This demo does not enforce access permissions.</div>
+        </div>
+      </div>
     </header>
     <div class="page" id="page"></div>
   </main>
@@ -429,6 +494,8 @@ button.kpi{cursor:pointer} button.kpi:hover{background:var(--sunk)}
 <div class="scrim" id="scrim" data-act="scrim"><div class="modal" role="dialog" aria-modal="true" id="modal"></div></div>
 <div class="bulk" id="bulk" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="demo-entry" id="demoEntry" hidden></div>
+<div class="guided-tour" id="guidedTour" hidden></div>
 <script>
 /* ================= Helpers ================= */
 const $ = s => document.querySelector(s);
@@ -495,7 +562,9 @@ const IC = {
 const ic = (n, cls='') => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[n]||IC.dot}"/></svg>`;
 
 /* ================= Constants ================= */
-const ME = 'Systems Lead';
+let VIEW_ROLE = 'Systems Lead';
+try { VIEW_ROLE = localStorage.getItem('gw-role-preview-v1') || VIEW_ROLE; } catch(e) {}
+let ME = VIEW_ROLE === 'Founder' ? 'Founder' : VIEW_ROLE === 'Manager' ? 'Hannah Cole' : 'Systems Lead';
 const OWNERS = ['Founder','Systems Lead','Priya Nair','Hannah Cole','Tom Reyes','Aisha Bello','Daniel Park','Nina Patel','Jordan Hale','Sofia Marin','Chloe Adams'];
 const TEAMS = ['Leadership','Operations','Ecommerce','Retail','Marketing','People','Product','Fulfilment'];
 const LOCS = ['London HQ','London Flagship','Store 2','Warehouse','Remote'];
@@ -513,7 +582,7 @@ const AREAS = {HR:'People',RET:'Retail',ECM:'Ecommerce',MKT:'Marketing',OPS:'Ope
 function seed(){
   const onb = (start, n, rv) => ({checklist:CHECKLIST.map((_,i)=>i<n), reviews:{r30:{date:addDays(start,30),done:rv[0]},r60:{date:addDays(start,60),done:rv[1]},r90:{date:addDays(start,90),done:rv[2]}}});
   const D = {
-  v:5,
+  v:6,
   employees:[
     {id:'EMP-101',name:'Founder',role:'Founder and CEO',team:'Leadership',location:'London HQ',manager:'',start:'2010-03-01',status:'Active',email:'founder@glassworks.example'},
     {id:'EMP-102',name:'Systems Lead',role:'Business Systems and AI Ops Lead',team:'Operations',location:'Remote',manager:'Founder',start:rel(-20),status:'Probation',email:'systems@glassworks.example',onb:onb(rel(-20),6,[false,false,false])},
@@ -527,7 +596,7 @@ function seed(){
     {id:'EMP-110',name:'Maya Thompson',role:'Sales Associate',team:'Retail',location:'London Flagship',manager:'Hannah Cole',start:rel(-34),status:'Probation',email:'maya@glassworks.example',onb:onb(rel(-34),8,[false,false,false])},
     {id:'EMP-111',name:'Leo Grant',role:'Sales Associate',team:'Retail',location:'Store 2',manager:'Hannah Cole',start:rel(-12),status:'Probation',email:'leo@glassworks.example',onb:onb(rel(-12),4,[false,false,false])},
     {id:'EMP-112',name:'Sofia Marin',role:'Assistant Store Manager',team:'Retail',location:'Store 2',manager:'Hannah Cole',start:'2024-05-20',status:'Active',email:'sofia@glassworks.example'},
-    {id:'EMP-113',name:'Ella Wright',role:'Sales Associate',team:'Retail',location:'London Flagship',manager:'Hannah Cole',start:rel(-63),status:'Probation',email:'ella@glassworks.example',onb:onb(rel(-63),8,[true,false,false])},
+    {id:'EMP-113',name:'Ella Wright',role:'Sales Associate',team:'Retail',location:'London Flagship',manager:'Hannah Cole',start:rel(-63),status:'Probation',email:'ella@glassworks.example',onb:onb(rel(-63),8,[true,true,false])},
     {id:'EMP-114',name:'Chloe Adams',role:'Ecommerce Executive',team:'Ecommerce',location:'London HQ',manager:'Priya Nair',start:rel(-88),status:'Probation',email:'chloe@glassworks.example',onb:onb(rel(-88),8,[true,true,false])}],
   jobs:[
     {id:'JOB-101',title:'Sales Associate',team:'Retail',location:'London Flagship',manager:'Hannah Cole',opened:rel(-21),target:rel(25),status:'Open'},
@@ -561,10 +630,10 @@ function seed(){
   issues:[
     {id:'ISS-201',title:'Size guide missing on new knitwear drop',type:'Product data',sev:'P2',owner:'Daniel Park',status:'In progress',opened:rel(-4),due:rel(-1),channel:'Website'},
     {id:'ISS-202',title:'Discount code stacking with sale prices',type:'Pricing',sev:'P1',owner:'Priya Nair',status:'Open',opened:rel(-1),due:rel(0),channel:'Checkout'},
-    {id:'ISS-203',title:'Courier collection missed two days running',type:'Fulfilment',sev:'P1',owner:'Jordan Hale',status:'Blocked',opened:rel(-3),due:rel(-1),channel:'Warehouse',blocker:'Waiting on courier account manager'},
+    {id:'ISS-203',title:'Courier collection missed two days running',type:'Fulfilment',sev:'P1',owner:'Jordan Hale',status:'In progress',opened:rel(-3),due:rel(1),channel:'Warehouse'},
     {id:'ISS-204',title:'Returns portal shows wrong refund window',type:'Returns',sev:'P2',owner:'Nina Patel',status:'Open',opened:rel(-2),due:rel(3),channel:'Website'},
     {id:'ISS-205',title:'Colour swatches mismatched on 6 dresses',type:'Product data',sev:'P3',owner:'Chloe Adams',status:'In progress',opened:rel(-6),due:rel(2),channel:'Website'},
-    {id:'ISS-206',title:'Mobile filter menu slow on older iPhones',type:'Site bug',sev:'P2',owner:'Priya Nair',status:'Open',opened:rel(-8),due:rel(-2),channel:'Website'},
+    {id:'ISS-206',title:'Mobile filter menu slow on older iPhones',type:'Site bug',sev:'P2',owner:'Priya Nair',status:'Open',opened:rel(-8),due:rel(2),channel:'Website'},
     {id:'ISS-207',title:'Marketplace stock not syncing for 3 SKUs',type:'Stock sync',sev:'P2',owner:'Chloe Adams',status:'Resolved',opened:rel(-10),due:rel(-5),channel:'Marketplace'},
     {id:'ISS-208',title:'Gift card balance not showing at checkout',type:'Payments',sev:'P2',owner:'Priya Nair',status:'Resolved',opened:rel(-15),due:rel(-11),channel:'Checkout'}],
   transfers:[
@@ -573,7 +642,7 @@ function seed(){
     {id:'TRF-303',product:'Wide-leg trouser, stone',sku:'GW-TR-0907',from:'London Flagship',to:'Store 2',sent:6,recv:null,date:rel(-1),status:'In transit',owner:'Sofia Marin'},
     {id:'TRF-304',product:'Wool wrap coat, camel',sku:'GW-CT-0220',from:'Warehouse',to:'London Flagship',sent:10,recv:null,date:rel(0),status:'In transit',owner:'Jordan Hale'},
     {id:'TRF-305',product:'Poplin shirt, white',sku:'GW-BL-0631',from:'Store 2',to:'Warehouse',sent:8,recv:8,date:rel(-9),status:'Received',owner:'Sofia Marin'},
-    {id:'TRF-306',product:'Midi tea dress, sage',sku:'GW-DR-1203',from:'Warehouse',to:'Store 2',sent:15,recv:14,date:rel(-2),status:'Variance',owner:'Jordan Hale'}],
+    {id:'TRF-306',product:'Midi tea dress, sage',sku:'GW-DR-1203',from:'Warehouse',to:'Store 2',sent:15,recv:15,date:rel(-2),status:'Received',owner:'Jordan Hale'}],
   content:[
     {id:'CNT-401',title:'Autumn knitwear edit',channel:'Email',stage:'Approval',owner:'Tom Reyes',due:rel(1)},
     {id:'CNT-402',title:'Coat campaign shoot',channel:'Photography',stage:'Shoot',owner:'Tom Reyes',due:rel(6)},
@@ -591,9 +660,9 @@ function seed(){
     {id:'TSK-101',title:'Send knitwear sell-through by size to buying',owner:'Priya Nair',due:rel(-2),status:'Open',ref:{o:'meetings',id:'MTG-101'}},
     {id:'TSK-102',title:'Confirm reorder quantities for the wrap coat',owner:'Daniel Park',due:rel(1),status:'In progress',ref:{o:'meetings',id:'MTG-101'}},
     {id:'TSK-103',title:'Brief photographer on gift guide shots',owner:'Tom Reyes',due:rel(4),status:'Open',ref:{o:'meetings',id:'MTG-101'}},
-    {id:'TSK-104',title:'Roll out opening checklist v2 to Store 2',owner:'Hannah Cole',due:rel(-4),status:'In progress',ref:{o:'meetings',id:'MTG-102'}},
+    {id:'TSK-104',title:'Roll out opening checklist v2 to Store 2',owner:'Hannah Cole',due:rel(-1),status:'In progress',ref:{o:'meetings',id:'MTG-102'}},
     {id:'TSK-105',title:'Book refresher till training for new starters',owner:'Sofia Marin',due:rel(2),status:'Open',ref:{o:'meetings',id:'MTG-102'}},
-    {id:'TSK-106',title:'Fix the staff rota template so breaks calculate',owner:'Systems Lead',due:rel(-1),status:'Blocked',ref:{o:'meetings',id:'MTG-102'},blocker:'Needs edit access to the rota sheet'},
+    {id:'TSK-106',title:'Fix the staff rota template so breaks calculate',owner:'Systems Lead',due:rel(2),status:'Blocked',ref:{o:'meetings',id:'MTG-102'},blocker:'Needs edit access to the rota sheet'},
     {id:'TSK-107',title:'Publish interview pack for Sales Associate',owner:'Systems Lead',due:rel(0),status:'In progress',ref:{o:'jobs',id:'JOB-101'}},
     {id:'TSK-108',title:'Agree probation review dates with Hannah',owner:'Aisha Bello',due:rel(3),status:'Open',ref:{o:'meetings',id:'MTG-103'}},
     {id:'TSK-109',title:'Set up candidate ledger permissions',owner:'Systems Lead',due:rel(-5),status:'Done',doneOn:rel(-6),ref:{o:'meetings',id:'MTG-103'}},
@@ -607,7 +676,7 @@ function seed(){
     {id:'SOP-103',title:'New product upload checklist',area:'Ecommerce',owner:'Priya Nair',version:'v1.3',status:'Approved',review:rel(40),steps:'Product data complete in the master sheet\nPhotography approved and named\nSize guide attached\nCopy checked against tone guide\nQA on mobile and desktop before publish'},
     {id:'SOP-104',title:'Candidate screening and scoring',area:'People',owner:'Aisha Bello',version:'v1.0',status:'In review',review:rel(90),steps:'Check application against the role must-haves\nScore each criterion 1 to 5 in the ledger\nWrite evidence for any score of 4 or 5\nMove to Screen or close with a reason code\nHiring manager makes the final decision'},
     {id:'SOP-105',title:'Meeting notes to actions',area:'Operations',owner:'Systems Lead',version:'v0.4',status:'Draft',review:rel(30),steps:'Paste notes into Meetings within 24 hours\nCheck owners and dates for each extracted action\nSend decisions to the Decision gate\nChair confirms the list'},
-    {id:'SOP-106',title:'Joiners, movers and leavers access',area:'Operations',owner:'Systems Lead',version:'v1.0',status:'Approved',review:rel(-2),steps:'Joiner: raise access request 5 days before start\nMover: review access on team change\nLeaver: remove all access on the last day\nUpdate the access register'},
+    {id:'SOP-106',title:'Joiners, movers and leavers access',area:'Operations',owner:'Systems Lead',version:'v1.0',status:'Approved',review:rel(30),steps:'Joiner: raise access request 5 days before start\nMover: review access on team change\nLeaver: remove all access on the last day\nUpdate the access register'},
     {id:'SOP-107',title:'Inter-store stock transfers',area:'Product',owner:'Daniel Park',version:'v1.1',status:'Approved',review:rel(120),steps:'Log the transfer before it leaves\nReceiving store counts on arrival\nRecord any difference the same day\nProduct team closes variances weekly'},
     {id:'SOP-108',title:'Content approval route',area:'Marketing',owner:'Tom Reyes',version:'v0.9',status:'In review',review:rel(20),steps:'Brief agreed with owner\nDraft in shared folder\nOne round of comments, 48 hours\nMarketing Lead approves'},
     {id:'SOP-109',title:'Using approved AI tools',area:'Operations',owner:'Systems Lead',version:'v1.0',status:'Approved',review:rel(75),steps:'Use only approved tools and templates\nNo personal data in unapproved tools\nEvery output reviewed by the named reviewer\nLog rejections so templates improve'}],
@@ -630,9 +699,9 @@ function seed(){
     {id:'DEC-106',title:'Allow AI drafting of customer service replies',area:'AI use',owner:'Priya Nair',by:'Systems Lead',due:rel(-12),status:'More info',decided:rel(-11),note:'Show 20 reviewed examples first.',context:'Template AI-5 drafted 14 replies in trial.'}],
   tickets:[
     {id:'ITR-501',title:'Laptop for new Ecommerce Executive',type:'Hardware',who:'Chloe Adams',owner:'Systems Lead',pri:'Normal',status:'Closed',opened:rel(-90),due:rel(-88)},
-    {id:'ITR-502',title:'Shopify staff account for Leo Grant',type:'Access request',who:'Leo Grant',owner:'Systems Lead',pri:'High',status:'Open',opened:rel(-2),due:rel(-1)},
+    {id:'ITR-502',title:'Shopify staff account for Leo Grant',type:'Access request',who:'Leo Grant',owner:'Systems Lead',pri:'High',status:'Open',opened:rel(-2),due:rel(1)},
     {id:'ITR-503',title:'Remove leaver access: former stock assistant',type:'Leaver',who:'Former stock assistant',owner:'Systems Lead',pri:'High',status:'In progress',opened:rel(-1),due:rel(0)},
-    {id:'ITR-504',title:'Card reader dropping connection, Store 2',type:'Store tech',who:'Sofia Marin',owner:'Systems Lead',pri:'High',status:'Blocked',opened:rel(-3),due:rel(-1),blocker:'Supplier engineer booked for Monday'},
+    {id:'ITR-504',title:'Card reader dropping connection, Store 2',type:'Store tech',who:'Sofia Marin',owner:'Systems Lead',pri:'High',status:'In progress',opened:rel(-3),due:rel(1)},
     {id:'ITR-505',title:'Shared drive permissions for Marketing',type:'Access request',who:'Tom Reyes',owner:'Systems Lead',pri:'Normal',status:'Open',opened:rel(-1),due:rel(3)},
     {id:'ITR-506',title:'Printer toner, Flagship back office',type:'Hardware',who:'Hannah Cole',owner:'Systems Lead',pri:'Low',status:'Open',opened:rel(-1),due:rel(5)}],
   assets:[
@@ -682,7 +751,7 @@ function seed(){
   D.workflows.forEach(w => A('workflows',w.id,`Moved to ${w.stage}`,rel(-14)+'T12:00','change',ME));
   A('workflows','WFL-107','Team ran it unaided for 4 weeks',rel(-2)+'T11:05','note',ME,'Usage checked: 28 of 28 opening checklists completed in the tracker.');
   D.transfers.forEach(t => A('transfers',t.id,`Transfer logged: ${t.sent} units`,t.date+'T08:30','create',t.owner));
-  A('transfers','TRF-306','Variance flagged: 1 unit short',rel(-2)+'T17:00','change','Sofia Marin');
+  A('transfers','TRF-306','Receiving count reconciled: all 15 units confirmed',rel(-2)+'T17:00','change','Sofia Marin');
   D.tickets.forEach(t => A('tickets',t.id,'Request raised',t.opened+'T09:10','create',t.who));
   D.content.forEach(c => A('content',c.id,`Moved to ${c.stage}`,rel(-2)+'T13:00','change',c.owner));
   D.airuns.forEach(r => A('airuns',r.id,`Draft generated, marked ${r.status}`,r.date+'T12:00','create',r.by));
@@ -691,9 +760,9 @@ function seed(){
 }
 
 /* ================= Store ================= */
-const KEY = 'gw-workroom-crm-v5';
+const KEY = 'gw-workroom-crm-v6';
 let DB;
-function load(){ try { const s = localStorage.getItem(KEY); if (s) { const o = JSON.parse(s); if (o && o.v === 5) return o; } } catch(e){} return seed(); }
+function load(){ try { const s = localStorage.getItem(KEY); if (s) { const o = JSON.parse(s); if (o && o.v === 6) return o; } } catch(e){} return seed(); }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(DB)); } catch(e){} }
 DB = load();
 function log(o, id, t, type='change', body, by=ME){ DB.activity.unshift({id:'ACT-'+Date.now()+Math.random().toString(36).slice(2,5), ref:{o,id}, t, when:nowStamp(), type, by, body}); save(); }
@@ -1218,7 +1287,7 @@ let threadHtml = D => `<div class="thread">${STG.map((s,i)=>`<div class="th${i}"
 const MODS = [];
 const mod = m => (MODS.push(m), m);
 mod({id:'home', name:'Home', icon:'home', group:'',
-  badge:()=>{const X=exceptions();return X.overdue.length+X.blocked.length;},
+  badge:()=>0,
   page(){
     const X = exceptions(), D = depIndex(), mine = DB.tasks.filter(t=>t.owner===ME&&t.status!=='Done').sort((a,b)=>a.due<b.due?-1:1);
     const done = DB.tasks.filter(t=>t.status==='Done'), onTime = done.filter(t=>!t.doneOn||t.doneOn<=t.due).length;
@@ -1324,6 +1393,49 @@ mod({id:'reports', name:'Reports', icon:'chart', group:'Control', desc:'What is 
 
 /* ================= Actions ================= */
 const ACT = {}, CHG = {}, INP = {};
+const TOUR_STEPS = [
+  {route:'home', title:'Start with the operating picture', body:'See the company-wide sample pulse, current decisions and a smaller set of exceptions. Use the role switch to preview Founder, Manager and Systems Lead perspectives.'},
+  {route:'workflows', title:'Move repeat work into a shared system', body:'Workflows show what is founder-held, mapped, systemised or adopted, with an owner and operating standard where one exists.'},
+  {route:'recruitment', title:'Make recruitment repeatable and reviewable', body:'Follow candidates through stages, capture evidence consistently and route decisions to the hiring owner. The system supports judgement; it does not make the hiring decision.'},
+  {route:'meetings', title:'Turn meetings into owned actions', body:'Capture notes, assign an owner and due date, track actions and send decisions through an explicit approval gate.'},
+  {route:'ai/connections', title:'Use AI with controls and human review', body:'Review possible providers, the proposed data path and the approval gates. This prototype has no connected model or live AI calls.'}
+];
+let TOUR_IDX = -1;
+function showIntro(){
+  $('#demoEntry').innerHTML = '<div class="entry-card" role="dialog" aria-modal="true" aria-labelledby="entryTitle"><span class="entry-kicker">Glassworks Workroom · prototype</span><h2 id="entryTitle">A short, guided look at the operating system</h2><p>This is an interactive example of how the role’s work could be organised across teams. The screens use fictional sample records and are not connected to Glassworks systems.</p><ul><li>Follow a five-step route through the main JD workstreams</li><li>Switch between three illustrative role perspectives</li><li>Open any module from the navigation when you want to explore</li></ul><div class="entry-actions"><button class="btn pri" data-act="startTour">Start 5-step tour</button><button class="btn" data-act="skipIntro">Explore directly</button></div></div>';
+  $('#demoEntry').hidden = false;
+}
+function updateTour(){
+  const s = TOUR_STEPS[TOUR_IDX]; if (!s) return;
+  const dots = TOUR_STEPS.map((_,i)=>'<i class="'+(i<=TOUR_IDX?'on':'')+'"></i>').join('');
+  $('#guidedTour').innerHTML = '<div class="tour-top"><span class="tour-step">Step '+(TOUR_IDX+1)+' of '+TOUR_STEPS.length+'</span><span class="tour-progress">'+dots+'</span></div><h3>'+s.title+'</h3><p>'+s.body+'</p><div class="tour-actions"><button class="btn sm" data-act="finishTour">Exit tour</button><div class="right"><button class="btn sm" data-act="tourBack" '+(TOUR_IDX===0?'disabled':'')+'>Back</button><button class="btn sm pri" data-act="tourNext">'+(TOUR_IDX===TOUR_STEPS.length-1?'Finish':'Next')+'</button></div></div>';
+  $('#guidedTour').hidden = false;
+  if (location.hash.slice(1) !== s.route) location.hash = s.route;
+}
+function startTour(){ $('#demoEntry').hidden = true; TOUR_IDX = 0; updateTour(); }
+function finishTour(){ TOUR_IDX = -1; $('#guidedTour').hidden = true; try{localStorage.setItem('gw-demo-intro-v1','seen')}catch(e){} }
+function initIntro(){ let seen=''; try{seen=localStorage.getItem('gw-demo-intro-v1')||''}catch(e){} if(!location.hash && !seen) showIntro(); }
+function renderRoleControl(){
+  const who = VIEW_ROLE === 'Founder' ? 'Founder' : VIEW_ROLE === 'Manager' ? 'Hannah Cole' : 'Systems Lead';
+  $('#roleAvatar').innerHTML = av(who); $('#roleLabel').textContent = VIEW_ROLE;
+}
+function setRoleView(role){
+  if(!['Founder','Manager','Systems Lead'].includes(role)) return;
+  VIEW_ROLE = role; ME = role === 'Founder' ? 'Founder' : role === 'Manager' ? 'Hannah Cole' : 'Systems Lead';
+  try{localStorage.setItem('gw-role-preview-v1',role)}catch(e){}
+  $('#roleDD').classList.remove('show'); $('#roleBtn').setAttribute('aria-expanded','false');
+  renderRoleControl(); render(false);
+}
+
+ACT.openIntro = () => { $('#guidedTour').hidden=true; TOUR_IDX=-1; showIntro(); };
+ACT.skipIntro = () => { $('#demoEntry').hidden=true; try{localStorage.setItem('gw-demo-intro-v1','seen')}catch(e){} };
+ACT.startTour = () => startTour();
+ACT.tourBack = () => { if(TOUR_IDX>0){ TOUR_IDX--; updateTour(); } };
+ACT.tourNext = () => { if(TOUR_IDX<TOUR_STEPS.length-1){ TOUR_IDX++; updateTour(); } else finishTour(); };
+ACT.finishTour = () => finishTour();
+ACT.toggleRole = () => { const d=$('#roleDD'), open=!d.classList.contains('show'); d.classList.toggle('show',open); $('#roleBtn').setAttribute('aria-expanded',String(open)); };
+ACT.chooseRole = d => setRoleView(d.role);
+
 ACT.go = d => { location.hash = d.to.replace(/^#/,''); };
 ACT.jump = d => { const el = $(d.to); el && el.scrollIntoView({behavior:'smooth', block:'center'}); };
 ACT.open = d => { location.hash = recUrl(d.o, d.id).slice(1); };
@@ -1479,9 +1591,9 @@ const SW = {'GW-KN-0412':'#D9C9A8','GW-DR-1188':'#23263A','GW-TR-0907':'#BDB4A4'
 const swatch = (sku, lg) => `<span class="sw ${lg?'lg':''}" style="background:${SW[sku] || '#'+((parseInt(String(sku).replace(/\D/g,'')||'7',10)*2654435)%0xBBBBBB+0x333333).toString(16).slice(0,6)}"></span>`;
 
 /* KPI renderer: objects {l,v,t,d,s,b:{v,t,max,low},dl} */
-function kpiHtml(list){ return `<div class="kpis">${list.map(k => { if (Array.isArray(k)) k = {l:k[0], v:k[1], d:k[2], t:k[3]};
+function kpiHtml(list){ return `<div class="kpi-wrap"><div class="sample-note"><b>Sample data</b><span>Illustrative figures</span></div><div class="kpis">${list.map(k => { if (Array.isArray(k)) k = {l:k[0], v:k[1], d:k[2], t:k[3]};
   return `<${k.href?`a href="${k.href}" style="text-decoration:none;color:inherit"`:'div'} class="kpi"><div class="top2"><div><div class="l">${esc(k.l)}</div><div class="v ${k.t||''}">${k.v}</div></div>${k.s?spark(k.s, TC[k.t]||TC.brand):''}</div>
-  ${k.b ? bullet(k.b.v, k.b.t, k.b.max, k.b.low) : ''}${k.dl ? `<div class="dl ${k.dl[0]}">${esc(k.dl[1])}</div>` : k.d ? `<div class="d">${esc(k.d)}</div>` : ''}</${k.href?'a':'div'}>`; }).join('')}</div>`; }
+  ${k.b ? bullet(k.b.v, k.b.t, k.b.max, k.b.low) : ''}${k.dl ? `<div class="dl ${k.dl[0]}">${esc(k.dl[1])}</div>` : k.d ? `<div class="d">${esc(k.d)}</div>` : ''}</${k.href?'a':'div'}>`; }).join('')}</div></div>`; }
 
 /* ================= Wording: shorter everywhere ================= */
 const Mx = id => MODS.find(m => m.id === id);
@@ -1593,6 +1705,22 @@ Mx('ai').extra = [['templates','Templates',()=>`<div class="grid g3">${DB.templa
   return `<div class="card tpl"><div class="spread"><span class="tile" style="width:34px;height:34px">${ic('spark')}</span>${pill(t.risk+' risk',t.risk==='High'?'t-bad':t.risk==='Medium'?'t-warn':'t-ok')}</div><b style="font-size:14.5px">${esc(t.name)}</b><p class="muted" style="margin:0">${esc(t.use)}</p>
   <div class="small muted">${rs.length} runs · ${pct(ok,rs.length)}% usable · Reviewer: ${esc(t.reviewer)}</div><div class="pbar"><i style="width:${pct(ok,rs.length)}%"></i></div><div><button class="btn sm pri" data-act="runTpl" data-id="${t.id}">${ic('spark')}Run</button></div></div>`; }).join('')}</div>`]];
 
+
+Mx('ai').extra.push(['connections','Connection plan',()=>[
+  '<div class="grid g2">',
+  '<div class="card"><div class="card-h"><h3>What this prototype does today</h3><span class="pill t-ok">Rules-based demo</span></div><div class="card-b"><p class="muted">The current screens use fixed rules, sample templates and a review log. No language model is connected, no prompt is sent to a provider and no live company data is used.</p><div class="ai-safety"><b>Current state:</b> this page is an implementation plan, not an active integration. Any provider, account, data flow and retention setting would need Glassworks approval before a pilot.</div></div></div>',
+  '<div class="card"><div class="card-h"><h3>Provider options to assess</h3><span class="pill t-warn">None connected</span></div><div class="card-b"><div class="ai-plan-grid">',
+  '<div class="ai-provider"><b>OpenAI · ChatGPT / API</b><p>Assess the company-approved workspace or API configuration, data controls and task fit.</p><span class="pill t-warn">Option to assess</span></div>',
+  '<div class="ai-provider"><b>Anthropic · Claude</b><p>Compare output quality, data handling, access controls and cost against the same test set.</p><span class="pill t-warn">Option to assess</span></div>',
+  '<div class="ai-provider"><b>Google · Gemini</b><p>Assess fit with the company workspace, document workflows and existing permissions.</p><span class="pill t-warn">Option to assess</span></div>',
+  '<div class="ai-provider"><b>Microsoft · Copilot</b><p>Assess fit where Microsoft 365 identity, files and existing controls are in use.</p><span class="pill t-warn">Option to assess</span></div>',
+  '<div class="ai-provider"><b>Cloudflare Workers AI</b><p>Assess a hosted inference option for a specific approved workflow and deployment model.</p><span class="pill t-warn">Option to assess</span></div>',
+  '</div><p class="small muted" style="margin:12px 0 0">n8n can orchestrate an approved workflow; it is not an LLM provider. The tool choice follows the use case, risk and existing company controls.</p></div></div>',
+  '<div class="card"><div class="card-h"><h3>Proposed controlled flow</h3><span class="pill t-ok">Human approval stays in the loop</span></div><div class="card-b"><div class="ai-flow"><div class="ai-flow-step"><b>1 · Bound the task</b><span>Use a named template, approved input and clear output format.</span></div><div class="ai-flow-step"><b>2 · Minimise data</b><span>Remove personal or confidential fields that the task does not need.</span></div><div class="ai-flow-step"><b>3 · Approved provider</b><span>Send only through a company-approved account or connector.</span></div><div class="ai-flow-step"><b>4 · Validate output</b><span>Check required fields, source references and policy rules.</span></div><div class="ai-flow-step"><b>5 · Human review</b><span>Named owner edits or approves; decision and version are logged.</span></div></div></div></div>',
+  '<div class="card"><div class="card-h"><h3>Safe first pilot</h3><span class="pill t-warn">Approval required</span></div><div class="card-b"><ol class="small" style="margin:0;padding-left:18px;line-height:1.8;color:var(--ink2)"><li>Choose a low-risk workflow such as meeting-note formatting or an SOP first draft.</li><li>Test with 10 anonymised examples and compare against a human-reviewed reference.</li><li>Record factual errors, edits, review time and user feedback; agree a threshold before expanding.</li><li>Keep hiring, HR/legal, customer commitments and buying decisions with accountable people.</li><li>Pause or revert if quality, privacy, cost or adoption falls outside the agreed limits.</li></ol></div></div>',
+  '</div>'
+].join('')]);
+
 Mx('meetings').kpis = () => { const ts = DB.tasks.filter(t=>t.ref&&t.ref.o==='meetings'), d = cnt(ts,t=>t.status==='Done'); return [{l:'Meetings captured', v:DB.meetings.length, s:trend(DB.meetings.length,8,-0.3)}, {l:'Actions created', v:ts.length}, {l:'Actions done', v:`${pct(d,ts.length)}%`, b:{v:pct(d,ts.length),t:80,max:100}, d:'Target 80%'}, {l:'Overdue actions', v:cnt(ts,t=>isOverdue(OBJ.tasks,t)), t:'bad'}]; };
 Mx('meetings').extra = [['capture','Capture',()=>`<div class="grid gs"><div class="card"><div class="card-h"><h3>New meeting</h3><button class="btn sm" data-act="sampleNotes">Sample notes</button></div><div class="card-b">
   <input class="fin" style="height:38px;width:100%" id="mtTitle" data-inp="mtTitle" value="${esc(UI.mtTitle)}" placeholder="Meeting title" aria-label="Meeting title">
@@ -1636,20 +1764,23 @@ function pulse(){
   return `<div class="pulse">${items.map(([id,icn,n,v,s,l])=>`<a class="pt" href="#${id}"><span class="lt ${l}" title="${l==='g'?'On track':l==='a'?'Watch':'Needs attention'}"></span><span class="h">${ic(icn)}${n}</span><span class="v">${v}</span><span class="s">${s}</span></a>`).join('')}</div>`;
 }
 Mx('home').page = function(){
-  const X = exceptions(), D = depIndex(), done = DB.tasks.filter(t=>t.status==='Done'), ot = pct(cnt(done,t=>!t.doneOn||t.doneOn<=t.due),done.length);
+  const allX = exceptions(), scoped = r => VIEW_ROLE === 'Systems Lead' || r.owner === ME;
+  const X = {overdue:allX.overdue.filter(scoped), blocked:allX.blocked.filter(scoped)};
+  const D = depIndex(), done = DB.tasks.filter(t=>t.status==='Done'), ot = pct(cnt(done,t=>!t.doneOn||t.doneOn<=t.due),done.length);
   const h = new Date().getHours(), now = new Date();
-  const pend = DB.decisions.filter(d=>['Pending','More info'].includes(d.status)).sort((a,b)=>a.due<b.due?-1:1);
+  const pend = DB.decisions.filter(d=>['Pending','More info'].includes(d.status) && (VIEW_ROLE === 'Systems Lead' || d.owner === ME)).sort((a,b)=>a.due<b.due?-1:1);
   return `<div class="ph"><div><h1 style="font-size:24px">Good ${h<12?'morning':h<18?'afternoon':'evening'}</h1><p>${TODAY.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})}</p></div><span class="fresh">Updated ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}</span></div>
+  <div class="home-demo-note"><b>Sample data</b><span>All people, dates and operating figures are fictional. Role preview: <strong>${esc(VIEW_ROLE)}</strong>; it changes this view only and does not enforce access permissions.</span></div>
   <div class="grid homegrid">
     <a class="card" href="#workflows" style="text-decoration:none;color:inherit"><div class="card-b"><div class="hero">${ring(100-D.pct,'',TC.brand,104).replace(/<span><\/span>/,'')}<div><div class="k">Work moved off the founder</div><div style="font-size:15px;font-weight:800;margin-top:4px">${D.counts[2]+D.counts[3]} of ${D.n} workflows systemised</div><div class="small muted" style="margin-top:6px">Dependency ${D.pct}% · target ≤ 35%</div>${bullet(D.pct,35,100,true)}</div></div>${threadHtml(D)}</div></a>
-    ${kpiHtml([{l:'Overdue', v:X.overdue.length, t:'bad', s:trend(X.overdue.length,8,1.2), dl:['up','−7 this month'], href:'#tasks'},{l:'Blocked', v:X.blocked.length, t:'bad', s:trend(X.blocked.length,8,0.5), href:'#tasks'},
-      {l:'Decisions waiting', v:pend.length, t:'warn', href:'#decisions'},{l:'Tasks on time', v:`${ot}%`, t:ot>=85?'ok':'warn', b:{v:ot,t:85,max:100}, d:'Target 85%', href:'#tasks'}]).replace('class="kpis"','class="kpis" style="margin:0;grid-auto-flow:row;grid-template-columns:1fr 1fr"')}
+    ${kpiHtml([{l:VIEW_ROLE==='Systems Lead'?'Overdue':'My overdue', v:X.overdue.length, t:'warn', s:trend(X.overdue.length,8,1.2), dl:['up','−7 this month'], href:'#tasks'},{l:VIEW_ROLE==='Systems Lead'?'Blocked':'My blocked', v:X.blocked.length, t:'warn', s:trend(X.blocked.length,8,0.5), href:'#tasks'},
+      {l:'Decisions waiting', v:pend.length, t:'warn', href:'#decisions'},{l:'Tasks on time · all teams', v:`${ot}%`, t:ot>=85?'ok':'warn', b:{v:ot,t:85,max:100}, d:'Target 85%', href:'#tasks'}]).replace('class="kpis"','class="kpis" style="margin:0;grid-auto-flow:row;grid-template-columns:1fr 1fr"')}
   </div>
   ${pend.length?`<div class="spread" style="margin:4px 0 10px"><h3 style="margin:0;font-size:15px">Decide now</h3><a class="small" href="#decisions">All decisions</a></div><div class="qd">${pend.slice(0,3).map(decisionCard).join('')}</div>`:''}
   <h3 style="margin:4px 0 10px;font-size:15px">Business pulse</h3>${pulse()}
   <div class="grid g2 mt">
-    <div class="card" id="hx-over"><div class="card-h"><h3>Overdue</h3><span class="pill t-bad nodot">${X.overdue.length}</span></div><div class="card-b xl" style="padding-top:2px;padding-bottom:2px">${X.overdue.slice(0,5).map(x=>xItem(x)).join('')||'<p class="muted">Clear.</p>'}</div></div>
-    <div class="card" id="hx-block"><div class="card-h"><h3>Blocked</h3><span class="pill t-bad nodot">${X.blocked.length}</span></div><div class="card-b xl" style="padding-top:2px;padding-bottom:2px">${X.blocked.slice(0,5).map(x=>xItem(x,1)).join('')||'<p class="muted">Clear.</p>'}</div></div>
+    <div class="card" id="hx-over"><div class="card-h"><h3>Overdue</h3><span class="pill t-warn nodot">${X.overdue.length}</span></div><div class="card-b xl" style="padding-top:2px;padding-bottom:2px">${X.overdue.slice(0,5).map(x=>xItem(x)).join('')||'<p class="muted">Clear.</p>'}</div></div>
+    <div class="card" id="hx-block"><div class="card-h"><h3>Blocked</h3><span class="pill t-warn nodot">${X.blocked.length}</span></div><div class="card-b xl" style="padding-top:2px;padding-bottom:2px">${X.blocked.slice(0,5).map(x=>xItem(x,1)).join('')||'<p class="muted">Clear.</p>'}</div></div>
   </div>`;
 };
 Mx('reports').desc = 'Weekly operating view';
@@ -1698,10 +1829,11 @@ function render(keep){
   window.scrollTo(0, keep ? y : 0);
   $('#side').classList.remove('open');
 }
-window.addEventListener('hashchange', () => { $('#createDD').classList.remove('show'); render(false); });
+window.addEventListener('hashchange', () => { $('#createDD').classList.remove('show'); if(TOUR_IDX>=0 && location.hash.slice(1)!==TOUR_STEPS[TOUR_IDX].route) finishTour(); render(false); });
 
 document.addEventListener('click', e => {
   if (!e.target.closest('.menuwrap')) $('#createDD').classList.remove('show');
+  if (!e.target.closest('#roleMenu')) { $('#roleDD').classList.remove('show'); $('#roleBtn').setAttribute('aria-expanded','false'); }
   if (!e.target.closest('.gsearch')) $('#qres').classList.remove('show');
   const t = e.target.closest('[data-act]'); if (!t || t.disabled) return;
   if (t.tagName === 'TR' && e.target.closest('input,select,textarea,button,a')) return;
@@ -1714,7 +1846,7 @@ document.addEventListener('change', e => { const t = e.target.closest('[data-chg
 document.addEventListener('input', e => { const t = e.target.closest('[data-inp]'); t && INP[t.dataset.inp] && INP[t.dataset.inp](t.dataset, t, e); });
 document.addEventListener('focusout', e => { if (e.target.matches('[data-chg="pset"]')) { const key = UI.editing; setTimeout(() => { if (UI.editing === key && key) { UI.editing = null; render(true); } }, 150); } });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { if ($('#scrim').classList.contains('show')) closeModal(); else if (UI.editing) { UI.editing = null; render(true); } $('#qres').classList.remove('show'); $('#createDD').classList.remove('show'); }
+  if (e.key === 'Escape') { if (!$('#demoEntry').hidden) $('#demoEntry').hidden=true; else if (!$('#guidedTour').hidden) finishTour(); else if ($('#scrim').classList.contains('show')) closeModal(); else if (UI.editing) { UI.editing = null; render(true); } $('#qres').classList.remove('show'); $('#createDD').classList.remove('show'); $('#roleDD').classList.remove('show'); $('#roleBtn').setAttribute('aria-expanded','false'); }
   if (e.key === 'Enter' && e.target.matches('tr[data-act]')) e.target.click();
   if (e.key === 'Enter' && e.target.matches('input[data-chg="pset"]')) e.target.blur();
   if (e.key === '/' && !e.target.closest('input,textarea,select')) { e.preventDefault(); $('#q').focus(); }
@@ -1737,6 +1869,7 @@ $('#q').addEventListener('keydown', e => { if (e.key === 'Enter') { const b = $(
 $('#createBtn').innerHTML = ic('plus') + 'Create';
 $('#createDD').innerHTML = ['candidates','employees','tasks','issues','transfers','content','meetings','sops','files','decisions','tickets','workflows'].map(k => `<button data-act="createObj" data-o="${k}">${ic((MODS.find(m=>m.objs&&m.objs.includes(k))||{}).icon)}${esc(OBJ[k].one)}</button>`).join('');
 $('.top .menu').innerHTML = ic('menu');
-$('#me').innerHTML = `${av(ME)}<span>${ME}</span>`;
+renderRoleControl();
 render(false);
+initIntro();
 </script></body></html>
