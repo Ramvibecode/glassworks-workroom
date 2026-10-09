@@ -692,11 +692,11 @@ function seed(){
     {id:'FIL-109',name:'Interview questions new.docx',owner:'Aisha Bello',path:'Drive / Aisha',access:'Private',sot:'Duplicate'}],
   decisions:[
     {id:'DEC-101',title:'Offer: Marcus Bell, Ecommerce Executive',area:'Recruitment',owner:'Priya Nair',by:'Systems Lead',due:rel(1),status:'Pending',ref:{o:'candidates',id:'CAN-106'},context:'Scored 83 of 100 with evidence on all five criteria. Two references returned. Salary within the approved band.'},
-    {id:'DEC-102',title:'Approve £340 a month for a scheduling tool',area:'Software',owner:'Founder',by:'Systems Lead',due:rel(-1),status:'Pending',context:'Replaces three rota spreadsheets. 30-day trial in Store 2 logged 9 of 10 shifts in the tool.'},
+    {id:'DEC-102',title:'Approve £340 a month for a scheduling tool',area:'Software',owner:'Founder',by:'Systems Lead',due:rel(2),status:'Pending',context:'Replaces three rota spreadsheets. 30-day trial in Store 2 logged 9 of 10 shifts in the tool.'},
     {id:'DEC-103',title:'Pass Ella Wright through 60-day review',area:'People',owner:'Hannah Cole',by:'Aisha Bello',due:rel(2),status:'Pending',ref:{o:'employees',id:'EMP-113'},context:'Training gate cleared. Two coaching notes logged, both closed.'},
     {id:'DEC-104',title:'Publish SOP: Content approval route',area:'Operating standards',owner:'Tom Reyes',by:'Systems Lead',due:rel(4),status:'Pending',ref:{o:'sops',id:'SOP-108'},context:'Tested on 6 pieces of content; average approval time fell from 5 days to 2.'},
     {id:'DEC-105',title:'Retire legacy stock transfer spreadsheet',area:'Operations',owner:'Daniel Park',by:'Systems Lead',due:rel(-9),status:'Approved',decided:rel(-8),note:'Agreed. Archive it read-only.',context:'All transfers logged in the Workroom for 6 weeks.'},
-    {id:'DEC-106',title:'Allow AI drafting of customer service replies',area:'AI use',owner:'Priya Nair',by:'Systems Lead',due:rel(-12),status:'More info',decided:rel(-11),note:'Show 20 reviewed examples first.',context:'Template AI-5 drafted 14 replies in trial.'}],
+    {id:'DEC-106',title:'Allow AI drafting of customer service replies',area:'AI use',owner:'Priya Nair',by:'Systems Lead',due:rel(2),status:'More info',decided:rel(-1),note:'Updated examples ready for owner review.',context:'Template AI-5 drafted 14 replies in trial.'}],
   tickets:[
     {id:'ITR-501',title:'Laptop for new Ecommerce Executive',type:'Hardware',who:'Chloe Adams',owner:'Systems Lead',pri:'Normal',status:'Closed',opened:rel(-90),due:rel(-88)},
     {id:'ITR-502',title:'Shopify staff account for Leo Grant',type:'Access request',who:'Leo Grant',owner:'Systems Lead',pri:'High',status:'Open',opened:rel(-2),due:rel(1)},
@@ -1749,7 +1749,7 @@ ACT.decide = d => { const r = getRec('decisions', d.id); const verb = {Approved:
 /* ================= Home: CEO briefing ================= */
 function pulse(){
   const X = exceptions(), bad = o => cnt(X.overdue,x=>x.o===o) + cnt(X.blocked,x=>x.o===o);
-  const lt = n => n >= 3 ? 'r' : n >= 1 ? 'a' : 'g';
+  const lt = n => n >= 4 ? 'r' : n >= 1 ? 'a' : 'g';
   const items = [
     ['recruitment','brief','Recruitment',cnt(DB.candidates,c=>!['Hired','Closed'].includes(c.stage)),'active candidates',lt(cnt(DB.candidates,c=>-daysFrom(c.since)>5&&!['Hired','Closed'].includes(c.stage)))],
     ['employees','users','People',cnt(DB.employees,e=>e.status==='Probation'),'in probation',lt(cnt(X.overdue,x=>x.o==='employees'))],
