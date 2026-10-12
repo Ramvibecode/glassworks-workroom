@@ -455,6 +455,35 @@ button.kpi{cursor:pointer} button.kpi:hover{background:var(--sunk)}
 .ai-flow-step b{display:block;font-size:11.5px;margin-bottom:4px}
 .ai-flow-step span{font-size:10.5px;color:var(--muted);line-height:1.4}
 .ai-safety{padding:13px 14px;border:1px solid #DCE9E2;background:#F5F9F6;border-radius:10px;color:var(--ink2);font-size:12px;line-height:1.55}
+
+.life-track{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+.life-stage{display:flex;flex-direction:column;justify-content:space-between;gap:13px;min-height:138px;padding:13px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 1px 2px rgba(23,32,27,.03);transition:border-color .15s,transform .15s,box-shadow .15s}
+.life-stage:hover{border-color:#ADC6B8;transform:translateY(-2px);box-shadow:0 8px 20px rgba(23,32,27,.07);text-decoration:none}
+.life-stage .life-num{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:var(--brand-soft);color:var(--brand);font-size:11px;font-weight:800}
+.life-stage .life-lab{font-size:12px;font-weight:800;line-height:1.3}
+.life-stage .life-val{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.life-stage .life-meta{font-size:10.5px;color:var(--muted);line-height:1.35}
+.life-stage .life-foot{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.life-stage .life-open{font-size:10.5px;color:var(--brand);font-weight:700}
+.life-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:18px 20px;margin-bottom:14px;border:1px solid #DCE9E2;border-radius:14px;background:linear-gradient(115deg,#F5F9F6 0%,#fff 72%)}
+.life-intro h2{margin:0 0 5px;font-size:17px;letter-spacing:-.02em}
+.life-intro p{margin:0;max-width:78ch;color:var(--muted);font-size:12.5px;line-height:1.55}
+.life-guard{flex:0 0 250px;padding:10px 12px;border:1px solid #DCE9E2;border-radius:10px;background:#fff;color:var(--ink2);font-size:11.5px;line-height:1.5}
+.life-guard b{display:block;margin-bottom:3px;color:var(--brand)}
+.life-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:14px;margin-top:14px}
+.life-case{display:grid;grid-template-columns:46px minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line2)}
+.life-case:last-child{border-bottom:0}
+.life-case b{font-size:13px}
+.life-case p{margin:3px 0 6px;color:var(--muted);font-size:11.5px}
+.life-case-actions{display:flex;gap:6px;flex-wrap:wrap}
+.life-list{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.life-list li{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start;color:var(--ink2);font-size:12px;line-height:1.5}
+.life-tick{display:grid;place-items:center;width:19px;height:19px;border-radius:6px;background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:11px}
+.life-footnote{padding:11px 13px;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--sunk);color:var(--muted);font-size:11.5px;line-height:1.5}
+@media(max-width:1250px){.life-track{grid-template-columns:repeat(4,minmax(0,1fr))}.life-layout{grid-template-columns:1fr}}
+@media(max-width:720px){.life-track{grid-template-columns:repeat(2,minmax(0,1fr))}.life-intro{flex-direction:column}.life-guard{flex:auto;width:100%}.life-case{grid-template-columns:36px minmax(0,1fr)}.life-case .btn{grid-column:2;justify-self:start}}
+@media(max-width:420px){.life-track{grid-template-columns:1fr}.life-stage{min-height:112px}.life-case{grid-template-columns:30px minmax(0,1fr)}}
+
 @media(max-width:900px){.top .roletext,.top .role-chevron{display:none}.top #roleAvatar,.top #roleAvatar *{display:grid!important}.tour-open span:nth-child(2){display:none}.ai-flow{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.entry-card{padding:22px}.entry-card h2{font-size:22px}.home-demo-note{font-size:11px;flex-direction:column;gap:3px}.ai-plan-grid,.ai-flow{grid-template-columns:1fr}.guided-tour{bottom:8px;padding:12px}.tour-actions .btn{padding:7px 9px}}
 </style>
@@ -691,7 +720,7 @@ function seed(){
     {id:'FIL-108',name:'PRD_AW26-Range-Plan_2026-05-20_v12.xlsx',owner:'Daniel Park',path:'Drive / Product / Range',access:'Restricted',sot:'Source of truth'},
     {id:'FIL-109',name:'Interview questions new.docx',owner:'Aisha Bello',path:'Drive / Aisha',access:'Private',sot:'Duplicate'}],
   decisions:[
-    {id:'DEC-101',title:'Offer: Marcus Bell, Ecommerce Executive',area:'Recruitment',owner:'Priya Nair',by:'Systems Lead',due:rel(1),status:'Pending',ref:{o:'candidates',id:'CAN-106'},context:'Scored 83 of 100 with evidence on all five criteria. Two references returned. Salary within the approved band.'},
+    {id:'DEC-101',title:'Offer approval: Marcus Bell, Ecommerce Executive',area:'Recruitment',owner:'Priya Nair',by:'Systems Lead',due:rel(1),status:'Pending',ref:{o:'candidates',id:'CAN-106'},context:'Scored 83 of 100 with evidence on all five criteria. Two references returned. Salary within the approved band.'},
     {id:'DEC-102',title:'Approve £340 a month for a scheduling tool',area:'Software',owner:'Founder',by:'Systems Lead',due:rel(2),status:'Pending',context:'Replaces three rota spreadsheets. 30-day trial in Store 2 logged 9 of 10 shifts in the tool.'},
     {id:'DEC-103',title:'Pass Ella Wright through 60-day review',area:'People',owner:'Hannah Cole',by:'Aisha Bello',due:rel(2),status:'Pending',ref:{o:'employees',id:'EMP-113'},context:'Training gate cleared. Two coaching notes logged, both closed.'},
     {id:'DEC-104',title:'Publish SOP: Content approval route',area:'Operating standards',owner:'Tom Reyes',by:'Systems Lead',due:rel(4),status:'Pending',ref:{o:'sops',id:'SOP-108'},context:'Tested on 6 pieces of content; average approval time fell from 5 days to 2.'},
@@ -767,6 +796,23 @@ function save(){ try { localStorage.setItem(KEY, JSON.stringify(DB)); } catch(e)
 DB = load();
 function log(o, id, t, type='change', body, by=ME){ DB.activity.unshift({id:'ACT-'+Date.now()+Math.random().toString(36).slice(2,5), ref:{o,id}, t, when:nowStamp(), type, by, body}); save(); }
 const emp = name => DB.employees.find(e => e.name === name);
+
+function linkLegacyHires(){
+  if(DB.hiringHandoffV1) return;
+  DB.candidates.filter(c=>c.stage==='Hired').forEach(c=>{
+    let e=DB.employees.find(x=>x.sourceCandidate===c.id||x.email===c.email||x.name===c.name);
+    if(!e){
+      const j=DB.jobs.find(x=>x.id===c.job)||{}, start=c.offerAcceptedOn||c.since||c.applied||rel(-30);
+      e={id:nextId(DB.employees,'EMP'),name:c.name,role:j.title||'New starter',team:j.team||'Operations',location:j.location||'Remote',manager:j.manager||'Founder',start,status:'Active',email:c.email||'',sourceCandidate:c.id};
+      DB.employees.unshift(e); DB.scores[e.id]=DB.scores[e.id]||{};
+      log('employees',e.id,'Existing sample hire linked to employee register','create','Recruitment record '+c.id+' · '+e.role,'System');
+    }
+    c.employeeId=e.id; e.sourceCandidate=e.sourceCandidate||c.id;
+  });
+  DB.hiringHandoffV1=true; save();
+}
+linkLegacyHires();
+
 /* ================= Object engine ================= */
 const OBJ = {};
 const def = (k, o) => { o.key = k; o.fields = o.fields.map(f => ({type:'text', ...f})); OBJ[k] = o; return o; };
@@ -1010,7 +1056,7 @@ function score(c){
   CRIT.forEach(k => { const s = (c.scores||{})[k.k]; if (s) { num += s*k.w; den += 5*k.w; n++; if (s >= 4 && !((c.evidence||{})[k.k]||'').trim()) gaps++; } });
   return {pct: den ? Math.round(num/den*100) : null, n, gaps};
 }
-const scoreChip = c => { const s = score(c); if (s.pct == null) return '<span class="faint">Not scored</span>'; const t = s.n < 3 ? '' : s.pct >= 75 ? 't-ok' : s.pct >= 55 ? 't-warn' : 't-bad'; return `<span class="pill nodot ${t}">${s.pct}${s.n<3?` (${s.n}/5)`:''}</span>`; };
+const scoreChip = c => { const s=score(c); if(s.pct==null) return '<span class="faint">Not scored</span>'; const t=s.n<5?'t-info':s.pct>=75?'t-ok':s.pct>=55?'t-warn':'t-bad'; return '<span class="pill nodot '+t+'">'+(s.n<5?'Provisional · ':'')+s.pct+(s.n<5?' · '+s.n+'/5':' / 100')+'</span>'; };
 const retail = () => DB.employees.filter(e => e.team === 'Retail' && e.status !== 'Leaver');
 const cleared = id => DB.modules.filter(m => m.mandatory === 'Yes').every(m => ((DB.scores[id]||{})[m.id] ?? -1) >= m.pass);
 const ago = s => { const n = -daysFrom(s); return n <= 0 ? 'today' : n === 1 ? '1 day' : n + ' days'; };
@@ -1031,7 +1077,7 @@ def('employees', {label:'Employees', one:'Employee', pre:'EMP', avatar:true, tit
   onChange:(r,f,o,v)=>{ if (f==='status' && v==='Leaver') { const t={id:nextId(DB.tickets,'ITR'),title:`Remove all access: ${r.name}`,type:'Leaver',who:r.name,owner:ME,pri:'High',status:'Open',opened:rel(0),due:rel(0)}; DB.tickets.unshift(t); log('tickets',t.id,'Raised automatically from leaver','create','System'); toast('Leaver access removal raised in IT'); } },
   hl:r=>[['Team',esc(r.team)],['Location',esc(r.location)],['Tenure',tenure(r.start)],['Probation ends',r.onb?fmtY(r.onb.reviews.r90.date):'Complete'],['Open tasks',DB.tasks.filter(t=>t.owner===r.name&&t.status!=='Done').length]],
   tabs:[{k:'onboarding',l:'Onboarding',render:r=>onbTab(r)},{k:'training',l:'Training',render:r=>trainTab(r)}],
-  related:r=>[{o:'assets',l:'Devices',rows:DB.assets.filter(a=>a.holder===r.name),add:{holder:r.name,status:'Assigned',issued:rel(0)}},{o:'tickets',l:'IT and access',rows:DB.tickets.filter(t=>t.who===r.name),add:{who:r.name}},{o:'decisions',l:'Decisions about them',rows:DB.decisions.filter(d=>d.ref&&d.ref.id===r.id)},{o:'tasks',l:'Tasks they own',rows:DB.tasks.filter(t=>t.owner===r.name&&t.status!=='Done')}]});
+  related:r=>[{o:'assets',l:'Devices',rows:DB.assets.filter(a=>a.holder===r.name),add:{holder:r.name,status:'Assigned',issued:rel(0)}},{o:'tickets',l:'IT and access',rows:DB.tickets.filter(t=>t.who===r.name),add:{who:r.name}},{o:'decisions',l:'Decisions about them',rows:DB.decisions.filter(d=>d.ref&&d.ref.id===r.id)},{o:'candidates',l:'Recruitment record',rows:DB.candidates.filter(c=>c.employeeId===r.id||c.id===r.sourceCandidate)},{o:'tasks',l:'Tasks they own',rows:DB.tasks.filter(t=>t.owner===r.name&&t.status!=='Done')}]});
 
 def('jobs', {label:'Jobs', one:'Job', pre:'JOB', title:r=>r.title, sub:r=>`${r.team}, ${r.location}`, status:'status', stages:['Open','On hold','Filled'], closed:['Filled'], owner:'manager', due:'target',
   fields:[{k:'title',l:'Job title',req:true},{k:'team',l:'Team',type:'select',options:TEAMS,plain:true},{k:'location',l:'Location',type:'select',options:LOCS,plain:true},{k:'manager',l:'Hiring manager',type:'person'},{k:'opened',l:'Opened',type:'date'},{k:'target',l:'Target start',type:'date'},{k:'status',l:'Status',type:'select',options:['Open','On hold','Filled']}],
@@ -1045,8 +1091,8 @@ def('jobs', {label:'Jobs', one:'Job', pre:'JOB', title:r=>r.title, sub:r=>`${r.t
   related:r=>[{o:'candidates',rows:DB.candidates.filter(c=>c.job===r.id),add:{job:r.id}},{o:'tasks',rows:tasksFor('jobs',r.id)}]});
 
 def('candidates', {label:'Candidates', one:'Candidate', pre:'CAN', avatar:true, title:r=>r.name, sub:r=>{const j=getRec('jobs',r.job);return j?j.title:'';},
-  status:'stage', stages:['Applied','Screen','Interview','Task','Decision','Hired','Closed'], path:['Applied','Screen','Interview','Task','Decision','Hired'], closed:['Hired','Closed'], owner:'owner', defaultView:'board',
-  guide:{Applied:'Check against the role must-haves within 2 working days. Close with a reason code if not shortlisted.',Screen:'15-minute call. Score Communication and Values before moving on.',Interview:'Use the interview pack. Score every criterion and write evidence for any 4 or 5.',Task:'Set the practical task. Score Role skills from the work, not the conversation.',Decision:'Send to the hiring manager with the scorecard. The manager decides.',Hired:'Create the employee record so onboarding and access requests start.'},
+  status:'stage', stages:['Applied','Screen','Interview','Task','Decision','Offer','Hired','Closed'], path:['Applied','Screen','Interview','Task','Decision','Offer','Hired'], closed:['Hired','Closed'], owner:'owner', defaultView:'board',
+  guide:{Applied:'Check against the role must-haves within 2 working days. Close with a reason code if not shortlisted.',Screen:'15-minute call. Score Communication and Values before moving on.',Interview:'Use the interview pack. Score every criterion and write evidence for any 4 or 5.',Task:'Set the practical task. Score Role skills from the work, not the conversation.',Decision:'Send a complete scorecard to the hiring manager. The manager decides.',Offer:'The manager approved the offer. Record when it is sent, then log the candidate response.',Hired:'Acceptance is recorded. The employee, onboarding and access hand-offs are linked.'},
   fields:[{k:'name',l:'Full name',req:true},{k:'job',l:'Applying for',type:'ref',to:'jobs'},{k:'stage',l:'Stage',type:'select',options:['Applied','Screen','Interview','Task','Decision','Hired','Closed']},{k:'owner',l:'Recruiter',type:'person'},
     {k:'source',l:'Source',type:'select',options:['Website','Indeed','LinkedIn','Referral','Instagram','Agency','Portfolio site'],plain:true},{k:'applied',l:'Applied',type:'date'},{k:'email',l:'Email'}],
   cols:['job','stage','score','evidence','owner','source','since'],
@@ -1056,11 +1102,19 @@ def('candidates', {label:'Candidates', one:'Candidate', pre:'CAN', avatar:true, 
   calc:rows=>{const s=rows.map(r=>score(r).pct).filter(x=>x!=null);return s.length?`average score ${Math.round(s.reduce((a,b)=>a+b,0)/s.length)}`:'';},
   defaults:()=>({stage:'Applied',owner:'Aisha Bello',applied:rel(0),since:rel(0),source:'Website',job:'JOB-101',scores:{},evidence:{}}),
   onChange:(r,f)=>{ if (f==='stage') r.since = rel(0); },
-  guard:(r,v)=>v==='Hired'&&!DB.decisions.some(d=>d.ref&&d.ref.id===r.id&&d.status==='Approved')?'Hiring needs the hiring manager\'s approval in the Decision gate first.':'',
+  guard:(r,v)=>{ if(v==='Offer'&&!DB.decisions.some(d=>d.ref&&d.ref.o==='candidates'&&d.ref.id===r.id&&d.status==='Approved')) return 'A hiring owner must approve the offer first.'; if(v==='Hired'&&r.offerResponse!=='Accepted') return 'Record an accepted offer response before marking this candidate as hired.'; return ''; },
   hl:r=>{const s=score(r);return [['Weighted score',s.pct==null?'Not scored':`${s.pct} / 100`],['Criteria scored',`${s.n} of 5`],['In stage',ago(r.since)],['Applied',fmtY(r.applied)],['Hiring manager',esc((getRec('jobs',r.job)||{}).manager||'—')]];},
-  actions:r=>{const p=DB.decisions.find(d=>d.ref&&d.ref.id===r.id&&d.status==='Pending');return p?`<a class="btn" href="${recUrl('decisions',p.id)}">${ic('scale')}Waiting on ${esc(p.owner)}</a>`:(['Hired','Closed'].includes(r.stage)?'':`<button class="btn pri" data-act="candRoute" data-id="${r.id}" ${score(r).n<3?'disabled title="Score at least 3 criteria first"':''}>${ic('scale')}Send for decision</button>`);},
+  actions:r=>{
+    const p=DB.decisions.find(d=>d.ref&&d.ref.o==='candidates'&&d.ref.id===r.id&&['Pending','More info'].includes(d.status));
+    if(r.employeeId) return '<a class="btn pri" href="'+recUrl('employees',r.employeeId)+'">'+ic('users')+'Open starter record</a>';
+    if(r.stage==='Hired') return '<span class="pill t-ok">Hire recorded</span>';
+    if(r.stage==='Offer') return r.offerSentOn
+      ? '<button class="btn pri" data-act="offerResponse" data-id="'+r.id+'">'+ic('check')+'Record offer response</button>'
+      : '<button class="btn pri" data-act="offerSent" data-id="'+r.id+'">'+ic('mail')+'Record offer sent</button>';
+    return p?'<a class="btn" href="'+recUrl('decisions',p.id)+'">'+ic('scale')+'Decision · '+esc(p.status)+'</a>':(['Closed'].includes(r.stage)?'':'<button class="btn pri" data-act="candRoute" data-id="'+r.id+'" '+(score(r).n<5||score(r).gaps?'disabled title="Score all 5 criteria and evidence each 4 or 5 first."':'')+'>'+ic('scale')+'Send for decision</button>');
+  },
   tabs:[{k:'score',l:'Scorecard',render:r=>scoreTab(r)},{k:'pack',l:'Interview pack',render:r=>packTab(r)}],
-  related:r=>[{o:'jobs',l:'Job',rows:[getRec('jobs',r.job)].filter(Boolean)},{o:'decisions',rows:DB.decisions.filter(d=>d.ref&&d.ref.id===r.id)},{o:'tasks',rows:tasksFor('candidates',r.id)}]});
+  related:r=>[{o:'jobs',l:'Job',rows:[getRec('jobs',r.job)].filter(Boolean)},{o:'decisions',rows:DB.decisions.filter(d=>d.ref&&d.ref.id===r.id)},{o:'employees',l:'Starter record',rows:DB.employees.filter(e=>e.sourceCandidate===r.id||e.id===r.employeeId)},{o:'tasks',rows:tasksFor('candidates',r.id)}]});
 
 def('tasks', {label:'Tasks', one:'Task', pre:'TSK', title:r=>r.title, sub:r=>refLabel(r.ref), status:'status', stages:['Open','In progress','Blocked','Done'], path:['Open','In progress','Done'], closed:['Done'], owner:'owner', due:'due',
   guide:{Open:'Confirm the owner and date are right. If either is wrong, change it here rather than in a message.','In progress':'Log a note if anything changes. Move to Blocked with a reason if you are waiting on someone.',Done:'Closed. It counts towards on-time completion if done by the due date.',Blocked:'Say what it is waiting on so the right person can unblock it.'},
@@ -1319,7 +1373,37 @@ mod({id:'recruitment', name:'Recruitment', icon:'brief', group:'People', objs:['
     ['Unevidenced high scores',sc.reduce((n,s)=>n+s.gaps,0),'need written evidence','bad'],['Stuck over 5 days',a.filter(c=>-daysFrom(c.since)>5).length,'in the same stage'],['Hired this quarter',DB.candidates.filter(c=>c.stage==='Hired').length,'','ok']]; }});
 mod({id:'employees', name:'People', icon:'users', group:'People', objs:['employees'], desc:'Employee records with onboarding, probation reviews, training and devices in one place.',
   badge:()=>DB.employees.filter(e=>e.onb).reduce((n,e)=>n+['r30','r60','r90'].filter(k=>!e.onb.reviews[k].done&&daysFrom(e.onb.reviews[k].date)<0).length,0),
-  extra:[['onboarding','Onboarding tracker',()=>{ const rows = DB.employees.filter(e=>e.onb);
+  extraFirst:true,
+  extra:[['lifecycle','Hiring to day 90',()=>{
+    const active = DB.candidates.filter(c=>!['Hired','Closed'].includes(c.stage)).length;
+    const waiting = DB.decisions.filter(d=>d.area==='Recruitment'&&['Pending','More info'].includes(d.status)).length;
+    const offers = DB.candidates.filter(c=>c.stage==='Offer').length;
+    const starters = DB.employees.filter(e=>e.onb).length;
+    const access = DB.tickets.filter(t=>t.type==='Access request'&&t.status!=='Closed'&&DB.employees.some(e=>e.name===t.who&&e.onb)).length;
+    const floor = retail(), clearedCount = floor.filter(e=>cleared(e.id)).length;
+    const reviews = DB.employees.filter(e=>e.onb).reduce((n,e)=>n+['r30','r60','r90'].filter(k=>!e.onb.reviews[k].done).length,0);
+    const stages = [
+      ['01','Role request',DB.jobs.filter(j=>j.status==='Open').length,'open roles','recruitment/jobs'],
+      ['02','Candidate review',active,'active candidates','recruitment/candidates'],
+      ['03','Hiring decision',waiting,'awaiting owner decision','decisions'],
+      ['04','Offer follow-up',offers,'offers awaiting action','recruitment/candidates'],
+      ['05','Starter setup',starters,'in onboarding','employees/onboarding'],
+      ['06','Access & training',access,clearedCount+'/'+floor.length+' floor-cleared','it/tickets'],
+      ['07','Probation reviews',reviews,'30 / 60 / 90 day actions','employees/onboarding']
+    ];
+    const c=DB.candidates.find(x=>x.stage==='Decision');
+    const d=c&&DB.decisions.find(x=>x.ref&&x.ref.o==='candidates'&&x.ref.id===c.id&&['Pending','More info'].includes(x.status));
+    const job=c&&getRec('jobs',c.job);
+    const decisionCase=c
+      ? '<div class="life-case">'+av(c.name,'lg')+'<div><b>'+esc(c.name)+' · '+esc(job?job.title:'Open role')+'</b><p>Hiring owner: '+esc(d?d.owner:(job&&job.manager||'Unassigned'))+' · '+score(c).n+'/5 criteria recorded · '+(score(c).gaps?score(c).gaps+' evidence gap(s)':'evidence recorded')+'</p><div class="life-case-actions">'+scoreChip(c)+(d?pill(d.status,d.status==='Pending'?'t-warn':'t-info'):'')+'</div></div><a class="btn sm pri" href="'+(d?recUrl('decisions',d.id):recUrl('candidates',c.id))+'">Open decision</a></div>'
+      : '<p class="muted" style="margin:0">No candidate is currently at the hiring-decision stage. Open Recruitment to review the pipeline.</p>';
+    return '<div class="home-demo-note"><b>Sample journey</b><span>Fictional records. Links, stages and counts update from this browser’s sample data; this prototype is not connected to Glassworks systems.</span></div>'+
+      '<div class="life-intro"><div><span class="entry-kicker">People operations · end-to-end</span><h2 style="margin-top:10px">One hire, one traceable journey</h2><p>Carry the record from approved role to candidate decision, offer response, onboarding, access, retail clearance and probation review. Each hand-off has an owner and a next step.</p></div><div class="life-guard"><b>Decision rights stay with people</b>The hiring manager approves the offer. A hire is recorded only after acceptance. Access is requested for review; the prototype never grants it.</div></div>'+
+      '<div class="life-track">'+stages.map(s=>'<a class="life-stage" href="#'+s[4]+'"><span class="life-num">'+s[0]+'</span><span class="life-lab">'+s[1]+'</span><span class="life-foot"><b class="life-val">'+s[2]+'</b><span class="life-open">Open →</span></span><span class="life-meta">'+s[3]+'</span></a>').join('')+'</div>'+
+      '<div class="life-layout"><div class="card"><div class="card-h"><h3>Try the live sample hand-off</h3><span class="pill t-info nodot">Local demo</span></div><div class="card-b">'+decisionCase+'<div class="life-footnote">After approval, record that the offer was sent, then log the candidate’s response. Only an accepted response creates the linked employee record, onboarding checklist, owner tasks and an access request.</div></div></div>'+
+      '<div class="card"><div class="card-h"><h3>Controls in the workflow</h3></div><div class="card-b"><ul class="life-list"><li><span class="life-tick">1</span><span><b>Consistent review:</b> use the same five criteria and evidence notes for each candidate.</span></li><li><span class="life-tick">2</span><span><b>Approval gate:</b> the named hiring manager records the decision and rationale.</span></li><li><span class="life-tick">3</span><span><b>Accepted offer:</b> the candidate record links to the new starter; no duplicate entry.</span></li><li><span class="life-tick">4</span><span><b>Closed-loop setup:</b> onboarding tasks, role-based access request, mandatory training and reviews stay visible to owners.</span></li></ul></div></div></div>'+
+      '<div class="life-footnote">Patterns used in established ATS and work-management products—structured scorecards, stage gates, approval routing, linked employee records, assigned follow-up and audit history—are adapted here to the JD’s scope. No recruitment or HR decision is automated.</div>';
+  }],['onboarding','Onboarding tracker',()=>{ const rows = DB.employees.filter(e=>e.onb);
     const rv = v => v.done ? pill('Done','t-ok') : dueChip(v.date);
     return `<div class="tw"><table class="tbl"><thead><tr><th>Starter</th><th>Started</th><th>Checklist</th><th>30-day</th><th>60-day</th><th>90-day</th><th>Line manager</th></tr></thead><tbody>${rows.map(e=>{const n=e.onb.checklist.filter(Boolean).length;
       return `<tr data-act="open" data-o="employees" data-id="${e.id}" tabindex="0"><td><div class="prim">${av(e.name)}<div><b>${esc(e.name)}</b><small>${esc(e.role)}</small></div></div></td><td>${fmt(e.start)}</td><td><div class="row" style="flex-wrap:nowrap"><div class="pbar" style="width:90px"><i style="width:${pct(n,CHECKLIST.length)}%"></i></div><span class="small">${n}/${CHECKLIST.length}</span></div></td><td>${rv(e.onb.reviews.r30)}</td><td>${rv(e.onb.reviews.r60)}</td><td>${rv(e.onb.reviews.r90)}</td><td>${who(e.manager)}</td></tr>`;}).join('')}</tbody></table></div>`; }]],
@@ -1377,7 +1461,7 @@ mod({id:'reports', name:'Reports', icon:'chart', group:'Control', desc:'What is 
     const X = exceptions(), D = depIndex();
     const areas = [['Recruitment','candidates'],['People','employees'],['Ecommerce','issues'],['Stock','transfers'],['Marketing','content'],['Tasks','tasks'],['SOPs','sops'],['IT','tickets'],['Decisions','decisions']];
     const cnt = (a,o) => a.filter(x=>x.o===o).length;
-    const fun = OBJ.candidates.stages.slice(0,6).map(s=>[s,DB.candidates.filter(c=>c.stage===s).length]); const fm = Math.max(1,...fun.map(f=>f[1]));
+    const fun = OBJ.candidates.stages.slice(0,7).map(s=>[s,DB.candidates.filter(c=>c.stage===s).length]); const fm = Math.max(1,...fun.map(f=>f[1]));
     const own = OWNERS.map(n=>[n,DB.tasks.filter(t=>t.owner===n&&t.status!=='Done').length,DB.tasks.filter(t=>t.owner===n&&isOverdue(OBJ.tasks,t)).length]).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]); const om = Math.max(1,...own.map(x=>x[1]));
     const adopt = [['People',91],['Operations',95],['Retail',86],['Ecommerce',78],['Marketing',54],['Product',47]];
     return `<div class="ph"><div class="tt"><div class="tile">${ic('chart')}</div><div><h1>Reports</h1><p>${this.desc}</p></div></div><div class="acts"><button class="btn" data-act="print">Print</button><button class="btn pri" data-act="weekly">${ic('note')}Write this week's report</button></div></div>
@@ -1394,15 +1478,16 @@ mod({id:'reports', name:'Reports', icon:'chart', group:'Control', desc:'What is 
 /* ================= Actions ================= */
 const ACT = {}, CHG = {}, INP = {};
 const TOUR_STEPS = [
-  {route:'home', title:'Start with the operating picture', body:'See the company-wide sample pulse, current decisions and a smaller set of exceptions. Use the role switch to preview Founder, Manager and Systems Lead perspectives.'},
-  {route:'workflows', title:'Move repeat work into a shared system', body:'Workflows show what is founder-held, mapped, systemised or adopted, with an owner and operating standard where one exists.'},
-  {route:'recruitment', title:'Make recruitment repeatable and reviewable', body:'Follow candidates through stages, capture evidence consistently and route decisions to the hiring owner. The system supports judgement; it does not make the hiring decision.'},
-  {route:'meetings', title:'Turn meetings into owned actions', body:'Capture notes, assign an owner and due date, track actions and send decisions through an explicit approval gate.'},
-  {route:'ai/connections', title:'Use AI with controls and human review', body:'Review possible providers, the proposed data path and the approval gates. This prototype has no connected model or live AI calls.'}
+  {route:'home', title:'Start with the operating picture', body:'See the sample operating pulse, decisions waiting and where recurring work still depends on one person.'},
+  {route:'recruitment/candidates', title:'Use a consistent hiring process', body:'Review candidates against the same five criteria, record evidence and send complete scorecards to the named hiring owner.'},
+  {route:'employees/lifecycle', title:'Follow one hire through day 90', body:'See the real hand-offs from approval to offer response, employee setup, access, retail clearance and probation reviews.'},
+  {route:'training/matrix', title:'Protect the retail release gate', body:'Training results are tied to people. Mandatory modules must be passed before a team member is cleared for the floor.'},
+  {route:'meetings/capture', title:'Turn meeting notes into owned work', body:'Check extracted tasks and decisions, assign owners and dates, then follow progress in one place.'},
+  {route:'ai/connections', title:'Keep AI useful and controlled', body:'See how approved providers could be assessed. This prototype has no connected model or live AI calls.'}
 ];
 let TOUR_IDX = -1;
 function showIntro(){
-  $('#demoEntry').innerHTML = '<div class="entry-card" role="dialog" aria-modal="true" aria-labelledby="entryTitle"><span class="entry-kicker">Glassworks Workroom · prototype</span><h2 id="entryTitle">A short, guided look at the operating system</h2><p>This is an interactive example of how the role’s work could be organised across teams. The screens use fictional sample records and are not connected to Glassworks systems.</p><ul><li>Follow a five-step route through the main JD workstreams</li><li>Switch between three illustrative role perspectives</li><li>Open any module from the navigation when you want to explore</li></ul><div class="entry-actions"><button class="btn pri" data-act="startTour">Start 5-step tour</button><button class="btn" data-act="skipIntro">Explore directly</button></div></div>';
+  $('#demoEntry').innerHTML = '<div class="entry-card" role="dialog" aria-modal="true" aria-labelledby="entryTitle"><span class="entry-kicker">Glassworks Workroom · prototype</span><h2 id="entryTitle">From founder-held work to an operating system</h2><p>A short, interactive example of how this role could connect recruitment, people, retail operations, meetings and controlled AI workflows.</p><ul><li>Follow a hiring-to-day-90 workflow with linked records</li><li>Try the decision, offer and onboarding hand-offs using fictional data</li><li>Explore the remaining modules from the navigation</li></ul><div class="entry-actions"><button class="btn pri" data-act="startTour">Start 6-step tour</button><button class="btn" data-act="skipIntro">Explore directly</button></div></div>';
   $('#demoEntry').hidden = false;
 }
 function updateTour(){
@@ -1484,11 +1569,22 @@ ACT.cscore = d => { const c = getRec('candidates', d.id); c.scores = c.scores ||
   log('candidates', c.id, `${CRIT.find(x=>x.k===d.k).n} scored ${c.scores[d.k] ?? 'cleared'}`, 'change'); save(); render(true); };
 INP.cev = (d, el) => { const c = getRec('candidates', d.id); c.evidence = c.evidence || {}; c.evidence[d.k] = el.value; el.classList.toggle('need', ((c.scores||{})[d.k]||0) >= 4 && !el.value.trim()); save(); };
 ACT.candRoute = d => { const c = getRec('candidates', d.id), j = getRec('jobs', c.job) || {}, s = score(c);
-  const r = {id:nextId(DB.decisions,'DEC'), title:`Offer: ${c.name}, ${j.title}`, area:'Recruitment', owner:j.manager||'Founder', by:ME, due:rel(2), status:'Pending', ref:{o:'candidates',id:c.id},
-    context:`Weighted score ${s.pct} of 100 across ${s.n} criteria. ${s.gaps ? s.gaps+' high score(s) still lack written evidence.' : 'All high scores have written evidence.'}`};
+  if(s.n<5||s.gaps){toast('Complete all five criteria and add evidence for every score of 4 or 5 first.');return;}
+  const r = {id:nextId(DB.decisions,'DEC'), title:`Offer approval: ${c.name}, ${j.title}`, area:'Recruitment', owner:j.manager||'Founder', by:ME, due:rel(2), status:'Pending', ref:{o:'candidates',id:c.id},
+    context:`Weighted score ${s.pct} of 100 across all five criteria. All high scores have written evidence. The hiring manager must approve before an offer is sent.`};
   DB.decisions.unshift(r); log('decisions', r.id, `Decision requested from ${r.owner}`, 'decision', r.context);
   if (c.stage !== 'Decision') setField('candidates', c.id, 'stage', 'Decision', true);
   log('candidates', c.id, `Sent to ${r.owner} for a hiring decision`, 'decision'); toast(`Sent to ${r.owner}`); render(true); };
+
+ACT.offerSent = d => { const c=getRec('candidates',d.id); if(!c||c.stage!=='Offer'){toast('This candidate is not at the offer stage.');return;}
+  form({title:'Record offer sent: '+c.name,note:'Record an offer already sent by the hiring owner. This prototype does not send email.',fields:[{k:'channel',l:'Sent via',type:'select',options:['Email','Phone','In person'],def:'Email'},{k:'note',l:'Note (optional)',type:'textarea',rows:3}],values:{channel:'Email'},submit:'Log offer sent',onSave:v=>{c.offerSentOn=rel(0);c.offerChannel=v.channel;c.offerSendNote=v.note;log('candidates',c.id,'Offer recorded as sent via '+v.channel,'email',v.note||undefined,ME);toast('Offer sent recorded');}}); };
+ACT.offerResponse = d => { const c=getRec('candidates',d.id); if(!c||c.stage!=='Offer'||!c.offerSentOn){toast('Record the offer as sent before its response.');return;}
+  form({title:'Record offer response: '+c.name,note:'Log the response received. Acceptance creates the linked starter record; declining closes the candidate with the reason.',fields:[{k:'outcome',l:'Candidate response',type:'select',options:['Accepted','Declined']},{k:'note',l:'Response note',type:'textarea',rows:3}],submit:'Save response',onSave:v=>{c.offerResponse=v.outcome;c.offerResponseOn=rel(0);c.offerResponseNote=v.note;
+    if(v.outcome==='Accepted'){c.offerAcceptedOn=rel(0);setField('candidates',c.id,'stage','Hired',true);const e=createStarterFromCandidate(c);log('candidates',c.id,'Offer accepted; starter hand-off created','decision','Employee record '+e.id+' linked. '+(v.note||''),ME);toast('Offer accepted · starter record created');location.hash=recUrl('employees',e.id);}
+    else{c.closeReason=v.note||'Candidate declined the offer';setField('candidates',c.id,'stage','Closed',true);log('candidates',c.id,'Offer declined; candidate closed','decision',v.note||undefined,ME);toast('Offer response recorded');}
+  }});
+};
+
 /* Decisions */
 ACT.decide = d => { const r = getRec('decisions', d.id); const verb = {Approved:'Approve','More info':'Ask for more information',Declined:'Decline'}[d.v];
   form({title:`${verb}: ${r.title}`, note:`Recorded as decided by ${esc(r.owner)}.`, fields:[{k:'note',l:'Note for the record',type:'textarea',rows:3}], submit:verb, onSave:v => {
@@ -1601,7 +1697,7 @@ const SHORT = {workflows:'From founder-held to adopted', recruitment:'Pipeline, 
   issues:'Site, checkout and fulfilment', transfers:'Sent versus received', content:'Brief to live', meetings:'Notes into owned actions', tasks:'Every action, one list',
   sops:'How we work, versioned', files:'One source of truth', decisions:'Owners decide, with evidence', it:'Access, leavers, devices', ai:'Approved, reviewed, logged', reports:'Weekly operating view'};
 Object.entries(SHORT).forEach(([k,v]) => { const m = Mx(k); if (m) { m.desc = v; delete m.note; delete m.top; } });
-Object.assign(OBJ.candidates.guide, {Applied:'Shortlist or close within 2 days.',Screen:'Score Communication and Values.',Interview:'Score all five. Evidence for any 4 or 5.',Task:'Score Role skills from the work.',Decision:'Waiting on the hiring manager.',Hired:'Create the employee record.'});
+Object.assign(OBJ.candidates.guide, {Applied:'Shortlist or close within 2 days.',Screen:'Score Communication and Values.',Interview:'Score all five. Evidence for any 4 or 5.',Task:'Score Role skills from the work.',Decision:'Waiting on the hiring owner.',Offer:'Approval recorded; log when sent, then capture the candidate response.',Hired:'Accepted; the linked starter record and setup tasks are available.'});
 Object.assign(OBJ.tasks.guide, {Open:'Confirm owner and date.','In progress':'Log changes here, not in chat.',Done:'Closed.',Blocked:'Name what it waits on.'});
 Object.assign(OBJ.issues.guide, {Open:'P1 is fixed the same day.','In progress':'Log what was tried.',Resolved:'Verify live, note root cause.'});
 Object.assign(OBJ.transfers.guide, {'In transit':'Count on arrival, record same day.',Received:'Counted in full.',Variance:'Recount before weekly close.'});
@@ -1637,7 +1733,7 @@ Mx('workflows').insight = () => { const D = depIndex(); const areas = [...new Se
 Mx('recruitment').kpis = () => { const a = DB.candidates.filter(c=>!['Hired','Closed'].includes(c.stage)); const g = a.reduce((n,c)=>n+score(c).gaps,0); const st = a.filter(c=>-daysFrom(c.since)>5).length;
   return [{l:'Active candidates', v:a.length, s:trend(a.length,8,-0.5)}, {l:'Awaiting decision', v:cnt(DB.candidates,c=>c.stage==='Decision'), t:'warn'},
     {l:'Unevidenced scores', v:g, t:g?'bad':'ok'}, {l:'Stuck > 5 days', v:st, t:st?'bad':'ok'}, {l:'Avg days to hire', v:'31', s:[44,41,39,38,36,34,33,31], t:'ok', dl:['up','−13 since Q2']}]; };
-Mx('recruitment').insight = () => { const st = OBJ.candidates.stages.slice(0,6), mx = Math.max(1,...st.map(s=>cnt(DB.candidates,c=>c.stage===s||st.indexOf(c.stage)>st.indexOf(s)&&c.stage!=='Closed')));
+Mx('recruitment').insight = () => { const st = OBJ.candidates.stages.slice(0,7), mx = Math.max(1,...st.map(s=>cnt(DB.candidates,c=>c.stage===s||st.indexOf(c.stage)>st.indexOf(s)&&c.stage!=='Closed')));
   const fun = st.map(s => [s, cnt(DB.candidates, c => c.stage!=='Closed' && st.indexOf(c.stage) >= st.indexOf(s))]);
   const top = DB.candidates.filter(c=>score(c).n>=3&&!['Hired','Closed'].includes(c.stage)).sort((a,b)=>score(b).pct-score(a).pct).slice(0,4);
   return box('Funnel', `<div class="funnel">${fun.map(([s,n],i)=>`<div><span class="l">${s}</span><i style="width:${Math.max(8,n/fun[0][1]*100)}%;opacity:${1-i*0.12}">${n}</i></div>`).join('')}</div>`)
@@ -1735,11 +1831,36 @@ function decisionCard(d){ const ref = d.ref && getRec(d.ref.o, d.ref.id);
   return `<div class="dcard"><div class="spread"><span class="small muted" style="font-weight:700">${esc(d.area)}</span>${dueChip(d.due)}</div><h4><a href="${recUrl('decisions',d.id)}" style="color:inherit">${esc(d.title)}</a></h4><p>${esc(d.context||'')}</p>
   <div class="row small muted" style="gap:6px">${av(d.owner)}<span>${esc(d.owner)} decides</span>${ref?`<span>·</span><a href="${recUrl(d.ref.o,d.ref.id)}">${esc(OBJ[d.ref.o].one)}</a>`:''}</div>
   <div class="row"><button class="btn sm pri" data-act="qd" data-id="${d.id}" data-v="Approved">Approve</button><button class="btn sm" data-act="qd" data-id="${d.id}" data-v="More info">More info</button><button class="btn sm red" data-act="qd" data-id="${d.id}" data-v="Declined">Decline</button></div></div>`; }
+function createStarterFromCandidate(c){
+  if(!c) return null;
+  const existing=DB.employees.find(e=>e.sourceCandidate===c.id)||(c.employeeId?DB.employees.find(e=>e.id===c.employeeId):null);
+  if(existing){c.employeeId=existing.id;return existing;}
+  const job=DB.jobs.find(j=>j.id===c.job)||{};
+  const start=rel(7);
+  const e={id:nextId(DB.employees,'EMP'),name:c.name,role:job.title||'New starter',team:job.team||'Operations',location:job.location||'Remote',manager:job.manager||'Founder',start,status:'Probation',email:c.email||'',sourceCandidate:c.id,
+    onb:{checklist:CHECKLIST.map(()=>false),reviews:{r30:{date:addDays(start,30),done:false},r60:{date:addDays(start,60),done:false},r90:{date:addDays(start,90),done:false}}}};
+  DB.employees.unshift(e); c.employeeId=e.id; DB.scores[e.id]=DB.scores[e.id]||{};
+  log('employees',e.id,'Starter record created from accepted offer','create','Recruitment record '+c.id+' · '+e.role,'System');
+  const access={id:nextId(DB.tickets,'ITR'),title:'Device and system access for '+e.name,type:'Access request',who:e.name,owner:'Systems Lead',pri:'High',status:'Open',opened:rel(0),due:addDays(start,-2),blocker:'Confirm role-based access and least-privilege list'};
+  DB.tickets.unshift(access); log('tickets',access.id,'Access request raised after accepted offer','create','Access remains pending review; no access is granted by this prototype.','System');
+  const items=[
+    ['Complete starter checks and employment documents','Aisha Bello',addDays(start,-1)],
+    ['Prepare first-week plan and assign a buddy',e.manager,addDays(start,-1)],
+    ['Set up device and role-based access','Systems Lead',addDays(start,-2)]
+  ];
+  if(e.team==='Retail') items.push(['Complete mandatory retail induction before solo floor work',e.manager,addDays(start,2)]);
+  items.forEach(x=>{const t={id:nextId(DB.tasks,'TSK'),title:x[0],owner:x[1],due:x[2],status:'Open',blocker:'',ref:{o:'employees',id:e.id}};DB.tasks.unshift(t);log('tasks',t.id,'Starter task assigned to '+x[1],'create','Employee '+e.id+' · '+x[0],'System');});
+  return e;
+}
+
 function applyDecision(r, v, note){
-  r.decided = rel(0); r.note = note || r.note; setField('decisions', r.id, 'status', v, true); log('decisions', r.id, `${r.owner}: ${v}`, 'decision', note || undefined, r.owner);
-  if (r.ref && v === 'Approved') {
-    if (r.ref.o === 'sops') { const s = getRec('sops', r.ref.id); if (s) { setField('sops', s.id, 'status', 'Approved', true); if (s.version.startsWith('v0')) s.version = 'v1.0'; s.review = rel(180); } }
-    if (r.ref.o === 'candidates') { const c = getRec('candidates', r.ref.id); if (c) setField('candidates', c.id, 'stage', 'Hired', true); } }
+  r.decided = rel(0); r.note = note || r.note; setField('decisions', r.id, 'status', v, true); log('decisions', r.id, r.owner+': '+v, 'decision', note || undefined, r.owner);
+  if (r.ref && r.ref.o === 'sops' && v === 'Approved') { const s=getRec('sops',r.ref.id); if(s){setField('sops',s.id,'status','Approved',true);if(s.version.startsWith('v0'))s.version='v1.0';s.review=rel(180);} }
+  if (r.ref && r.ref.o === 'candidates') {
+    const c=getRec('candidates',r.ref.id);
+    if(c&&v==='Approved'){c.offerApprovedOn=rel(0);c.offerSentOn=null;c.offerResponse=null;setField('candidates',c.id,'stage','Offer',true);log('candidates',c.id,'Offer approved by '+r.owner,'decision',note||'Approval recorded. Record when the offer is sent, then capture the candidate response.',r.owner);}
+    if(c&&v==='Declined'){c.closeReason=note||'Hiring owner did not approve progression';setField('candidates',c.id,'stage','Closed',true);log('candidates',c.id,'Hiring decision declined; candidate closed','decision',c.closeReason,r.owner);}
+  }
   save();
 }
 ACT.qd = d => { const r = getRec('decisions', d.id); applyDecision(r, d.v); toast(`${d.v}: ${r.title}`); render(true); };
@@ -1770,7 +1891,7 @@ Mx('home').page = function(){
   const h = new Date().getHours(), now = new Date();
   const pend = DB.decisions.filter(d=>['Pending','More info'].includes(d.status) && (VIEW_ROLE === 'Systems Lead' || d.owner === ME)).sort((a,b)=>a.due<b.due?-1:1);
   return `<div class="ph"><div><h1 style="font-size:24px">Good ${h<12?'morning':h<18?'afternoon':'evening'}</h1><p>${TODAY.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})}</p></div><span class="fresh">Updated ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}</span></div>
-  <div class="home-demo-note"><b>Sample data</b><span>All people, dates and operating figures are fictional. Role preview: <strong>${esc(VIEW_ROLE)}</strong>; it changes this view only and does not enforce access permissions.</span></div>
+  <div class="home-demo-note"><b>Sample data</b><span>All people, dates and operating figures are fictional. Role preview: <strong>${esc(VIEW_ROLE)}</strong>; it changes this view only and does not enforce access permissions. <a href="#employees/lifecycle" style="font-weight:700">Explore the hiring-to-day-90 journey →</a></span></div>
   <div class="grid homegrid">
     <a class="card" href="#workflows" style="text-decoration:none;color:inherit"><div class="card-b"><div class="hero">${ring(100-D.pct,'',TC.brand,104).replace(/<span><\/span>/,'')}<div><div class="k">Work moved off the founder</div><div style="font-size:15px;font-weight:800;margin-top:4px">${D.counts[2]+D.counts[3]} of ${D.n} workflows systemised</div><div class="small muted" style="margin-top:6px">Dependency ${D.pct}% · target ≤ 35%</div>${bullet(D.pct,35,100,true)}</div></div>${threadHtml(D)}</div></a>
     ${kpiHtml([{l:VIEW_ROLE==='Systems Lead'?'Overdue':'My overdue', v:X.overdue.length, t:'warn', s:trend(X.overdue.length,8,1.2), dl:['up','−7 this month'], href:'#tasks'},{l:VIEW_ROLE==='Systems Lead'?'Blocked':'My blocked', v:X.blocked.length, t:'warn', s:trend(X.blocked.length,8,0.5), href:'#tasks'},
