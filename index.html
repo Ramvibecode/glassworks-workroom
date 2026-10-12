@@ -1917,8 +1917,8 @@ function modPage(M, tab){
   CUR = {kind: isObj ? 'list' : 'custom', mod:M.id, obj: isObj ? tab : null};
   const k = M.kpis ? M.kpis() : null;
   return `<div class="ph"><div class="tt"><div class="tile">${ic(M.icon)}</div><div><h1>${esc(M.name)}</h1><p>${esc(M.desc||'')}</p></div></div></div>
-  ${k ? kpiHtml(k) : ''}
-  ${M.insight ? `<div class="ins">${M.insight()}</div>` : ''}
+  ${k && (isObj || tab !== 'lifecycle') ? kpiHtml(k) : ''}
+  ${M.insight && (isObj || tab !== 'lifecycle') ? `<div class="ins">${M.insight()}</div>` : ''}
   ${tabs.length > 1 ? `<nav class="otabs">${tabs.map(([t,l,c]) => `<a href="#${M.id}/${t}" aria-current="${t===tab?'page':'false'}">${esc(l)}${c!=null?`<span class="c">${c}</span>`:''}</a>`).join('')}</nav>` : ''}
   ${isObj ? listView(tab) : (M.extra.find(x => x[0] === tab) || [,,()=>''])[2]()}`;
 }
